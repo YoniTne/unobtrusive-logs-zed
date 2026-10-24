@@ -1,0 +1,11 @@
+id = "unobtrusive-logs"
+name = "Unobtrusive Logs"
+version = "0.1.0"
+schema_version = 1
+authors = ["Yoni Taine"]
+description = "Dims log statements so they stay out of your way."
+repository = "https://github.com/YoniTne/unobtrusive-logs-zed"
+
+[language_servers.unobtrusive-logs]
+name = "Unobtrusive Logs"
+languages = ["TypeScript", "JavaScript", "TSX"]
