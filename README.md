@@ -1,2 +1,3 @@
-# unobtrusive-logs-zed
-Zed extension that dims log statements in your code. Port of unobtrusive-logs for VS Code.
+Port of [unobtrusive-logs](https://github.com/nemocazin/unobtrusive-logs) by Némo Cazin.
+
+> 🚧 Work in progress.
