@@ -1,19 +1,35 @@
 {
-  "name": "server",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "esbuild src/server.ts --bundle --platform=node --outfile=dist/server.js"
+  "name": "unobtrusive-logs-language-server",
+  "version": "0.1.0",
+  "description": "Language server that marks log statements with semantic tokens so editors can dim them.",
+  "license": "MIT",
+  "author": "Yoni Taine",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YoniTne/unobtrusive-logs-zed",
+    "directory": "server"
   },
-  "keywords": [],
-  "type": "commonjs",
+  "bin": {
+    "unobtrusive-logs-language-server": "dist/server.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "esbuild src/server.ts --bundle --platform=node --target=node18 --outfile=dist/server.js --banner:js=\"#!/usr/bin/env node\"",
+    "watch": "npm run build -- --watch",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm run build"
+  },
   "dependencies": {
     "vscode-languageserver": "^11.0.0",
     "vscode-languageserver-textdocument": "^1.0.16"
   },
   "devDependencies": {
+    "@types/node": "^26.6.5",
     "esbuild": "^0.28.2",
     "typescript": "^7.0.2"
   }
